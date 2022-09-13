@@ -1,6 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
+
 function DetailScreen({route, navigation}) {
+  /**navigation이 update할 때마다 실행
+   * route.params.id를 반환 받아옴
+   */
+  useEffect(() => {
+    navigation.setOptions({
+      title: `뒤테일 - ${route.params.id}`,
+    });
+  }, [navigation, route.params.id]);
+
   return (
     <View style={styles.block}>
       {/**
@@ -9,7 +19,7 @@ function DetailScreen({route, navigation}) {
        * name : 'Detail' (route명)
        * params : {"id" : 1}
        */}
-      <Text style={styles.text}>id: {route.params.id}</Text>
+      <Text style={styles.text}>id : {route.params.id}</Text>
       <View style={styles.buttons}>
         <Button
           title="다음"

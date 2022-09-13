@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {View, Button} from 'react-native';
 
 function HmoewScreen({navigation}) {
-  /**DEPS(2번째 인자)가 바뀌는 일은 없지만 eslINT 규칙상 [navigation]을 추가함
+  /** useFeect에서 DEPS(2번째 인자)가 바뀌는 일은 없지만 eslINT 규칙상 [navigation]을 추가함
    * 순서는 app.js를 useEffect.setOptions이 덮어쓰게됨
    */
   useEffect(() => {
